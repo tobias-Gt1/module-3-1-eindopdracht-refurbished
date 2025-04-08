@@ -1,0 +1,678 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gruppo", serif;
+  margin: 0;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+.header {
+  padding: 80px;
+  text-align: center;
+  background-image: url("https://cms-artifacts.artlist.io/content/motion-array/910660/Concrete_Wall_Background_high_resolution_preview_910660.jpg?Expires=2036601292153&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=XtdK2cjVBfHQcsUZ2ArKHa6pObbOGpAIy6OzJN-aR606zq63326Bb6-5ycMrWgaO64fvMog8vS7dX811qfmBNnBFNUdrIXqF0WXMYlSRyrVAzKfJ~K31kIPNcrUuvHQf-3Khxn883vSNmN-~YhEG3Y7-02JiBTKXUwaLwKfam96maJNfzz4yw8Hegpa~EBtUz32RVxSElSGvBTLl0OY1MTgXRv1Haue13qsUUhZPbzHwjxpYg1b7ESBB4B9oWdcRsj6azmn-K81lyfa2AWYfg5419MF~UskL3j-H7XGehRCV5CFRjceRX~isXTCvFGb00Iw64nX~hx1tFCz9K9hngg__");
+  color: white;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 10%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: #7f7b7b;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #8e8a8a70;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 10%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  /* position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0; */
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border: 0;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Gruppo", serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+
+  .header {
+    padding: 80px;
+    text-align: center;
+    background-image: url("https://cms-artifacts.artlist.io/content/motion-array/910660/Concrete_Wall_Background_high_resolution_preview_910660.jpg?Expires=2036601292153&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=XtdK2cjVBfHQcsUZ2ArKHa6pObbOGpAIy6OzJN-aR606zq63326Bb6-5ycMrWgaO64fvMog8vS7dX811qfmBNnBFNUdrIXqF0WXMYlSRyrVAzKfJ~K31kIPNcrUuvHQf-3Khxn883vSNmN-~YhEG3Y7-02JiBTKXUwaLwKfam96maJNfzz4yw8Hegpa~EBtUz32RVxSElSGvBTLl0OY1MTgXRv1Haue13qsUUhZPbzHwjxpYg1b7ESBB4B9oWdcRsj6azmn-K81lyfa2AWYfg5419MF~UskL3j-H7XGehRCV5CFRjceRX~isXTCvFGb00Iw64nX~hx1tFCz9K9hngg__");
+    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-position: center;
+  }
+
+  .header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    padding: 10px;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .navbar a:hover {
+    background-color: #444;
+  }
+
+  .navbar a.active {
+    background-color: #555;
+    color: white;
+  }
+
+  form.example input[type="text"] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 10%;
+    background: #f1f1f1;
+    transition: width 0.4s ease-in-out;
+  }
+
+  form.example input[type="text"]:focus {
+    width: 20%;
+  }
+
+  form.example button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #7f7b7b;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  form.example button:hover {
+    background: #8e8a8a70;
+  }
+
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .navbar a.right {
+    float: right;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .side {
+    flex: 10%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  .container input:checked ~ .checkmark {
+    background-color: #2196f3;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .slidecontainer {
+    width: 100%;
+    margin: 20px;
+  }
+
+  .slider {
+    /* -webkit-appearance: none; */
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("zakje.png");
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("zakje.png");
+    cursor: pointer;
+  }
+
+  .main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+
+  .divider {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .divider::before,
+  .divider::after {
+    flex: 1;
+    content: "";
+    padding: 3px;
+    background-color: rgb(81, 81, 81);
+    margin: 5px;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .product p {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+  }
+  background: url("zakje.png");
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url("zakje.png");
+  cursor: pointer;
+}
+
+/* Style voor de recent bekeken items sectie */
+.recent-items {
+  margin-top: 20px;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.recent-item img {
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recent-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+.divider {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.divider::before,
+divider::after {
+  flex: 1;
+  content: "";
+  padding: 3px;
+  background-color: rgb(81, 81, 81);
+  margin: 5px;
+}
+
+.main {
+  display: flex;
+  padding: 20px;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex-wrap: wrap;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.product p {
+  max-width: 300px;
+}
+
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.cart-icon {
+  cursor: pointer;
+  color: #000;
+  font-size: 24px;
+  margin-left: 10px;
+}
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+  /* margin-left: 12%; */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer h2 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.footer .divider {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer .divider:hover {
+  text-decoration: underline;
+}
+
+.product-gallery #large-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thumbnail-container .thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-container .thumbnail:hover {
+  border-color: #007bff;
+}
+
+.clothing-description {
+  margin: 20px auto;
+  padding: 40px;
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.clothing-description h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+  font-weight: bold;
+}
+
+.clothing-description p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.clothing-description img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}

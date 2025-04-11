@@ -45,6 +45,61 @@ $product_data = [
             "fotos/w2000_q60 (16).avif",
             "fotos/w920_q60 (2).avif"
         ]
+    ],
+    [
+        "id" => 5,
+        "title" => "Oversized distressed printed cotton-jersey hoodie",
+        "description" => "Balenciaga's hoodie channels the brand's iconic flair for grunge. It's cut from cotton-jersey with dropped shoulders and has a kangaroo pocket for storing small essentials. The hem is frayed to create a lived-in look.",
+        "price" => 115,
+        "images" => [
+            "fotos/w920_q60 (5).avif",
+            "fotos/w920_q60 (7).avif",
+            "fotos/w920_q60 (6).avif"
+        ]
+    ],
+    [
+        "id" => 6,
+        "title" => "Cropped distressed printed cotton-jersey T-shirt",
+        "description" => "The distressed details of Balenciaga's T-shirt complements the retro logo. It's cut from soft cotton-jersey in a signature oversized fit and printed with the label's moniker across the front. Complement the frayed hem with your most-worn jeans.",
+        "price" => 450,
+        "images" => [
+            "fotos/w1365_q60.avif",
+            "fotos/w920_q60 (8).avif",
+            "fotos/w92 0_q60 (9).avif"
+        ]
+    ],
+    [
+        "id" => 7,
+        "title" => "Oversized Distressed Logo-Print Cotton-Jersey Hoodie",
+        "description" => "Balenciaga's SS24 offering is infused with the same irreverent street style as its previous collections. This hoodie is made from faded cotton-jersey and features a tape-effect version of the brand's moniker across the front and back. It's designed to look like the pocket has been ripped off.",
+        "price" => 115,
+        "images" => [
+            "fotos/w960_q60.avif",
+            "fotos/w960_q60 (4).avif",
+            "fotos/w960_q60 (3).avif"
+        ]
+    ],
+    [
+        "id" => 8,
+        "title" => "Oversized distressed printed cotton-jersey hoodie",
+        "description" => "Balenciaga's hoodie channels the brand's iconic flair for grunge. It's cut from cotton-jersey with dropped shoulders and has a kangaroo pocket for storing small essentials. The hem is frayed to create a lived-in look.",
+        "price" => 250,
+        "images" => [
+            "fotos/w460_q60.avif",
+            "fotos/w920_q60 (1).avif",
+            "fotos/w2000_q60 (13).avif"
+        ]
+    ],
+    [
+        "id" => 9,
+        "title" => "Oversized distressed printed cotton-jersey hoodie",
+        "description" => "Balenciaga's hoodie channels the brand's iconic flair for grunge. It's cut from cotton-jersey with dropped shoulders and has a kangaroo pocket for storing small essentials. The hem is frayed to create a lived-in look.",
+        "price" => 250,
+        "images" => [
+            "fotos/w460_q60.avif",
+            "fotos/w920_q60 (1).avif",
+            "fotos/w2000_q60 (13).avif"
+        ]
     ]
 ];
 

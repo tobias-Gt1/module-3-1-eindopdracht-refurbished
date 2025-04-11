@@ -132,7 +132,7 @@
           value=""
           class="slider"
           id="myRange" />
-        <p>Amount €: <span id="demo"></span></p>
+        <p>Amount €: <span id="demo">500</span></p>
       </div>
 
       <h1>Recent bekeken items</h1>
@@ -162,7 +162,7 @@
     <div class="main">
       <?php include 'includes/products1.php'; ?>
 
-      <!-- Persoongegevens Section -->
+      <!-- Persoongegevens Section
       <div class="persoongegevens">
         <h2>Persoongegevens</h2>
         <table>
@@ -174,7 +174,7 @@
           </tr>
         </table>
       </div>
-    </div>
+    </div> -->
 
     <?php include 'includes/footer.php'; ?>
 

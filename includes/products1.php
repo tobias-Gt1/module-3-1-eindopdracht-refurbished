@@ -50,7 +50,7 @@
 <div class="product">
   <a href="clothing.php?id=5">
     <img
-      src="fotos/w230_q60.avif"
+      src="fotos/w920_q60 (5).avif"
       width="300"
       alt="Product 5" />
   </a>
@@ -72,7 +72,7 @@
 </div>
 
 <div class="product">
-  <a href="product7.html">
+  <a href="clothing.php?id=7">
     <img
       src="fotos/w960_q60.avif"
       width="300"
@@ -84,7 +84,7 @@
 </div>
 
 <div class="product">
-  <a href="product8.html">
+  <a href="clothing.php?id=8">
     <img
       src="fotos/w960_q60 (1).avif"
       width="300"
@@ -96,7 +96,7 @@
 </div>
 
 <div class="product">
-  <a href="product9.html">
+  <a href="clothing.php?id=9">
     <img
       src="fotos/w2000_q60 (2).avif"
       width="300"
@@ -110,7 +110,7 @@
 </div>
 
 <div class="product">
-  <a href="product10.html">
+  <a href="clothing.php?id=10">
     <img
       src="fotos/w2000_q60 (3).avif"
       width="300"

@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+$cart = $_SESSION['cart'] ?? [];
+$total_price = array_reduce($cart, fn($sum, $item) => $sum + $item['price'], 0);
+$vat = $total_price * 0.21;
+$total_price_with_vat = $total_price + $vat;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -356,39 +364,32 @@
         </div>
         <div class="col-large">
           <div class="container-secondary">
-            <h3>Additional Information</h3>
-            <p>Items in cart: 0</p>
+            <h3>Uw Winkelmandje</h3>
+            <?php if (empty($cart)) { ?>
+              <p>Uw winkelmandje is leeg.</p>
+            <?php } else { ?>
+              <ul>
+                <?php foreach ($cart as $item) { ?>
+                  <li>
+                    <strong><?= htmlspecialchars($item['title'] ?? 'Unknown Title') ?></strong> -
+                    Maat: <?= htmlspecialchars($item['size'] ?? 'Unknown Size') ?> -
+                    Prijs: €<?= htmlspecialchars($item['price'] ?? '0.00') ?>
+                  </li>
+                <?php } ?>
+              </ul>
+              <div class="cart-total" style="margin-top: 20px; font-size: 1.2rem; font-weight: bold;">
+                Totale Prijs (excl. BTW): €<?= htmlspecialchars($total_price) ?><br>
+                BTW (21%): €<?= htmlspecialchars($vat) ?><br>
+                Totale Prijs (incl. BTW): €<?= htmlspecialchars($total_price_with_vat) ?>
+              </div>
+            <?php } ?>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <?php
-  $totalPrice = 0;
-  if (isset($_SESSION['cart'])) {
-    foreach ($_SESSION['cart'] as $product) {
-      echo '<div class="cart-item">';
-      echo '<h3>' . $product['name'] . '</h3>';
-      echo '<p>Unit Price: $' . $product['price'] . '</p>';
-      echo '<p>Quantity: ' . $product['quantity'] . '</p>';
-      echo '<p>Total Price: $' . $product['price'] . '</p>';
-      $totalPrice += $product['price'] * $product['quantity'];
-      echo '<p>Brand: ' . $product['brand'] . '</p>';
-      echo '<button class="cart-item" onclick="removeFromCart(' . $product['id'] . ')">Remove</button>';
-      echo '</div>';
-    }
-  }
-  ?>
-
-
-  <?php
-  $totalVAT = $totalPrice / 121 * 100;
-  echo "Total Order Price (Excl. BTW): $" . number_format($totalVAT, 2) . "<br>";
-  echo "Total Order Price (Incl. BTW): $" . number_format($totalPrice, 2) . "<br>";
-
-
-  ?>
+ 
 
   <?php include 'includes/footer.php'; ?>
 

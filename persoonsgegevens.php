@@ -1,10 +1,29 @@
 <?php
 session_start();
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Save user details in the session
+    $_SESSION['user_details'] = [
+        'firstname' => htmlspecialchars($_POST['firstname']),
+        'infix' => htmlspecialchars($_POST['infix']),
+        'lastname' => htmlspecialchars($_POST['address']),
+        'city' => htmlspecialchars($_POST['city']),
+        'housenumber' => htmlspecialchars($_POST['housenumber']),
+        'postal_code' => htmlspecialchars($_POST['post']),
+        'country' => htmlspecialchars($_POST['country']),
+        'email' => htmlspecialchars($_POST['email']),
+        'phone' => htmlspecialchars($_POST['phone']),
+    ];
+
+    // Redirect to the thank-you page
+    header("Location: thx.php");
+    exit();
+}
+
 $cart = $_SESSION['cart'] ?? [];
 $total_price = array_reduce($cart, fn($sum, $item) => $sum + $item['price'], 0);
-$vat = $total_price * 0.21;
-$total_price_with_vat = $total_price + $vat;
+$btw = $total_price * 0.21;
+$total_price_with_btw = $total_price + $btw;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -250,20 +269,20 @@ $total_price_with_vat = $total_price + $vat;
       <div class="row">
         <div class="col-large">
           <div class="container form-container">
-            <form action="/action_page.php">
-              <h3>Your Contacts</h3>
+            <form method="POST" action="thx.php">
+              <h3>Your Contact Details</h3>
               <div class="form-group">
-                <label for="fname">Firstname</label>
+                <label for="fname">First Name</label>
                 <input type="text" id="fname" name="firstname" required />
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="infix">Infix</label>
+                  <label for="infix">Middle Name</label>
                   <input type="text" id="infix" name="infix" />
                 </div>
                 <div class="form-group">
-                  <label for="adr">Lastname</label>
+                  <label for="adr">Last Name</label>
                   <input type="text" id="adr" name="address" required />
                 </div>
               </div>
@@ -275,11 +294,11 @@ $total_price_with_vat = $total_price + $vat;
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="housenumber">House number</label>
+                  <label for="housenumber">House Number</label>
                   <input type="text" id="housenumber" name="housenumber" required />
                 </div>
                 <div class="form-group">
-                  <label for="post">Postal code</label>
+                  <label for="post">Postal Code</label>
                   <input type="text" id="post" name="post" required />
                 </div>
               </div>
@@ -291,7 +310,7 @@ $total_price_with_vat = $total_price + $vat;
                   <option value="Belgium">Belgium</option>
                   <option value="Germany">Germany</option>
                   <option value="United States">United States</option>
-                  <option value="United Kingdom">United Kindom (UK)</option>
+                  <option value="United Kingdom">United Kingdom (UK)</option>
                 </select>
               </div>
 
@@ -306,7 +325,7 @@ $total_price_with_vat = $total_price + $vat;
               </div>
 
               <div class="form-group">
-                <label for="dob">Date of birth</label>
+                <label for="dob">Date of Birth</label>
                 <div class="form-row">
                   <div class="form-group">
                     <select id="dob-day" name="dob-day">
@@ -353,34 +372,34 @@ $total_price_with_vat = $total_price + $vat;
 
               <div class="form-group">
                 <label>
-                  General terms and conditions
+                  General Terms and Conditions
                   <input type="checkbox" checked="checked" name="gtc" style="margin-left: 10px;" />
                 </label>
               </div>
 
-              <input type="submit" value="Continue to checkout" class="btn" />
+              <input type="submit" value="Continue to Checkout" class="btn" />
             </form>
           </div>
         </div>
         <div class="col-large">
           <div class="container-secondary">
-            <h3>Uw Winkelmandje</h3>
+            <h3>Your Shopping Cart</h3>
             <?php if (empty($cart)) { ?>
-              <p>Uw winkelmandje is leeg.</p>
+              <p>Your shopping cart is empty.</p>
             <?php } else { ?>
               <ul>
                 <?php foreach ($cart as $item) { ?>
                   <li>
                     <strong><?= htmlspecialchars($item['title'] ?? 'Unknown Title') ?></strong> -
-                    Maat: <?= htmlspecialchars($item['size'] ?? 'Unknown Size') ?> -
-                    Prijs: €<?= htmlspecialchars($item['price'] ?? '0.00') ?>
+                    Size: <?= htmlspecialchars($item['size'] ?? 'Unknown Size') ?> -
+                    Price: €<?= htmlspecialchars($item['price'] ?? '0.00') ?>
                   </li>
                 <?php } ?>
               </ul>
               <div class="cart-total" style="margin-top: 20px; font-size: 1.2rem; font-weight: bold;">
-                Totale Prijs (excl. BTW): €<?= htmlspecialchars($total_price) ?><br>
-                BTW (21%): €<?= htmlspecialchars($vat) ?><br>
-                Totale Prijs (incl. BTW): €<?= htmlspecialchars($total_price_with_vat) ?>
+                Total Price (Excl. btw): €<?= htmlspecialchars($total_price) ?><br>
+                btw (21%): €<?= htmlspecialchars($btw) ?><br>
+                Total Price (Incl. btw): €<?= htmlspecialchars($total_price_with_btw) ?>
               </div>
             <?php } ?>
           </div>
@@ -415,7 +434,7 @@ $total_price_with_vat = $total_price + $vat;
     }
 
     let totalOrderPrice = 0;
-    let totalVAT = 0;
+    let totalbtw = 0;
 
     cart.forEach((product, index) => {
       const productTotalPrice = product.price * product.quantity;
@@ -433,13 +452,13 @@ $total_price_with_vat = $total_price + $vat;
       cartContainer.appendChild(productElement);
     });
 
-    totalVAT = totalOrderPrice / 121 * 100;
+    totalbtw = totalOrderPrice / 121 * 100;
 
     cartSummary.innerHTML = `
       <h3>Order Summary</h3>
-      <p>Total Order Price (Excl. BTW): $${totalVAT.toFixed(2)}</p>
-      <p>BTW (21%): $${(totalOrderPrice - totalVAT).toFixed(2)}</p>
-      <p>Total Order Price (Incl. BTW): $${totalOrderPrice.toFixed(2)}</p>
+      <p>Total Order Price (Excl. btw): $${totalbtw.toFixed(2)}</p>
+      <p>btw (21%): $${(totalOrderPrice - totalbtw).toFixed(2)}</p>
+      <p>Total Order Price (Incl. btw): $${totalOrderPrice.toFixed(2)}</p>
     `;
   }
 
